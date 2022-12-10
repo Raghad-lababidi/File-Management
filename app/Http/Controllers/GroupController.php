@@ -25,7 +25,7 @@ class GroupController extends Controller
             $user = auth()->user();
             $success = GroupService::create($request, $user);
 
-            return $this->returnSuccessMessage('Group Created Successfuly');
+            return $this->returnSuccessMessage('Group Created Successfully');
         } catch(Exception $e) {
             return $this->returnError('Failed Create Group', '5000');
         }
@@ -45,7 +45,7 @@ class GroupController extends Controller
                 
             $success = GroupService::update($request);
 
-            return $this->returnSuccessMessage('Group Updated Successfuly');
+            return $this->returnSuccessMessage('Group Updated Successfully');
         } catch(Exception $e) {
             return $this->returnError('Failed Update Group', '5000');
         }
@@ -69,7 +69,7 @@ class GroupController extends Controller
 
             $success = GroupService::destroy($request, $user);
 
-            return $this->returnSuccessMessage('Group Deleted Successfuly');
+            return $this->returnSuccessMessage('Group Deleted Successfully');
 
         } catch(Exception $e) {
             return $this->returnError('Failed Delete Group', '5000');
@@ -90,7 +90,7 @@ class GroupController extends Controller
 
             $success = GroupService::getMembersGroup($request);
             
-            return $this->returnData('Get Data Successfuly', 'data', $success);
+            return $this->returnData('Get Data Successfully', 'data', $success);
 
         } catch(Exception $e) {
             return $this->returnError('Failed Get Data', '5000');
@@ -111,7 +111,7 @@ class GroupController extends Controller
 
             $success = GroupService::getFilesGroup($request);
             
-            return $this->returnData('Get Data Successfuly', 'data', $success);
+            return $this->returnData('Get Data Successfully', 'data', $success);
 
         } catch(Exception $e) {
             return $this->returnError('Failed Get Data', '5000');
@@ -128,7 +128,7 @@ class GroupController extends Controller
             $user = auth()->user();
             $success = UserService::userShowOwnerGroups($user);
 
-            return $this->returnData('Get Files Successfuly', 'data', $success);
+            return $this->returnData('Get Groups Successfully', 'data', $success);
         } catch(Exception $e) {
             return $this->returnError('Failed Get Data', '5000');
         }

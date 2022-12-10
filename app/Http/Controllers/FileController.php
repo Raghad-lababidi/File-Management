@@ -26,7 +26,7 @@ class FileController extends Controller
 
             $request = FileService::create($request, $user);
 
-            return $this->returnSuccessMessage('File Created Successfuly');
+            return $this->returnSuccessMessage('File Created Successfully');
         } catch(Exception $e) {
             return $this->returnError('Failed Create File', '5000');
         }
@@ -47,7 +47,7 @@ class FileController extends Controller
 
             $success = FileService::update($request, $user);
 
-            return $this->returnSuccessMessage('File Updated Successfuly');
+            return $this->returnSuccessMessage('File Updated Successfully');
         } catch(Exception $e) {
             return $this->returnError('Failed Update File', '5000');
         }
@@ -66,7 +66,7 @@ class FileController extends Controller
                 return $this->returnError('Failed Delete File, you can not delete this file you are not the owner', '401');
 
             $success = FileService::destroy($request);
-            return $this->returnSuccessMessage('File Deleted Successfuly');
+            return $this->returnSuccessMessage('File Deleted Successfully');
             
         } catch(Exception $e) {
             return $this->returnError('Failed Delete File', '5000');
@@ -83,7 +83,7 @@ class FileController extends Controller
             $user = auth()->user();
             $success = UserService::userShowOwnerFiles($user);
 
-            return $this->returnData('Get Files Successfuly', 'data', $success);
+            return $this->returnData('Get Files Successfully', 'data', $success);
         } catch(Exception $e) {
             return $this->returnError('Failed Get Data', '5000');
         }
@@ -98,7 +98,7 @@ class FileController extends Controller
         try {
             $success = FileService::GetFileStatus($request);
 
-            return $this->returnData('Get Status Successfuly', 'status', $success);
+            return $this->returnData('Get Status Successfully', 'status', $success);
         } catch(Exception $e) {
             return $this->returnError('Failed Get Status', '5000');
         }

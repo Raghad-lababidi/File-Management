@@ -35,7 +35,7 @@ class GroupFileController extends Controller
                 return $this->returnError('Can Not Add, file name already exist', '401');
 
             $success = FileService::addFileToGroup($request, $user);
-            return $this->returnSuccessMessage('File Added To Group Successfuly');
+            return $this->returnSuccessMessage('File Added To Group Successfully');
         
         } catch(Exception $e) {
             return $this->returnError('Failed Add File To Group', '5000');
@@ -56,7 +56,7 @@ class GroupFileController extends Controller
             
             $success = FileService::removeFileFromGroup($request);
         
-            return $this->returnSuccessMessage('Removerd File From Group Successfuly');
+            return $this->returnSuccessMessage('Removerd File From Group Successfully');
         } catch(Exception $e) {
             return $this->returnError('Failed Remove File From Group', '5000');
         }

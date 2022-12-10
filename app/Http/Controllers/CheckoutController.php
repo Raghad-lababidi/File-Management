@@ -30,7 +30,7 @@ class CheckoutController extends Controller
             $success = CheckoutService::create($request, $user);
 
             if($success)
-                return $this->returnSuccessMessage("Checkout File Successfuly");
+                return $this->returnSuccessMessage("Checkout File Successfully");
 
             return $this->returnError('Failed Checkout files', '5000');
         } catch(Exception $e) {

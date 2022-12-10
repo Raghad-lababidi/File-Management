@@ -30,7 +30,7 @@ class UserService
     public static function userShowOwnerFiles($user)
     {
         $data = [];
-        $files = $user->files()->select('name','status','created_at')->get();
+        $files = $user->files()->select('name as file_name','status')->get();
         $data['my_files'] = $files ;
 
         return  $data;
@@ -39,7 +39,7 @@ class UserService
     public static function userShowOwnerGroups($user)
     {
         $data = [];
-        $groups = $user->ownerGroups()->select('name','created_at')->get();
+        $groups = $user->ownerGroups()->select('name as group_name')->get();
         $data['my_groups'] = $groups ;
         
         return $data;

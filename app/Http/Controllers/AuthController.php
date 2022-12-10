@@ -66,7 +66,7 @@ class AuthController extends Controller
             'token' => $token
         ];
 
-        return $this->returnData("login successfuly", "success", $data);
+        return $this->returnData("login successfully", "success", $data);
     }
 
 
@@ -74,6 +74,6 @@ class AuthController extends Controller
     {
         auth()->user()->tokens()->delete();
 
-        return $this->returnSuccessMessage("logged out");
+        return $this->returnSuccessMessage("logout successfully");
     }
 }

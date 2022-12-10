@@ -22,7 +22,7 @@ class CheckinController extends Controller
         try {
             $success = CheckinService::checkinInfo($request);
 
-            return $this->returnData('Get information Successfuly', 'data', $success);
+            return $this->returnData('Get information Successfully', 'data', $success);
         } catch(Exception $e) {
             return $this->returnError('Failed Get information', '5000');
         }
@@ -40,7 +40,7 @@ class CheckinController extends Controller
             $success = CheckinService::create($request, $user);
 
             if($success)
-                return $this->returnSuccessMessage("Checkin File Successfuly");
+                return $this->returnSuccessMessage("Checkin File Successfully");
 
             return $this->returnError('Failed Checkin files', '5000');
         } catch(Exception $e) {

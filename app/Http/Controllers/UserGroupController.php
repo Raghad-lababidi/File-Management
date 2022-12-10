@@ -26,7 +26,7 @@ class UserGroupController extends Controller
 
             $success = UserService::addUserToGroup($request);
         
-            return $this->returnSuccessMessage('Add User To Group Successfuly');
+            return $this->returnSuccessMessage('Add User To Group Successfully');
         } catch(Exception $e) {
             return $this->returnError('Failed Add User To Group', '5000');
         }
@@ -46,7 +46,7 @@ class UserGroupController extends Controller
 
             $success = UserService::removeUserFromGroup($request);
         
-            return $this->returnSuccessMessage('Removed User From Group Successfuly');
+            return $this->returnSuccessMessage('Removed User From Group Successfully');
         } catch(Exception $e) {
             return $this->returnError('Failed Remove User From Group', '5000');
         }
