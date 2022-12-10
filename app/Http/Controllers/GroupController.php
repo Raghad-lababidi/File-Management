@@ -77,27 +77,6 @@ class GroupController extends Controller
     }
 
     /**
-     * Get all users in specific group
-     *
-     */
-    public function getMembersGroup(GetGroupRequest $request)
-    {
-        try {
-            $user = auth()->user();
-
-            if(!GroupService::checkUserIsOwner($request->group_id, $user->id) && !GroupService::checkUserIsMember($request->group_id, $user->id))
-                return $this->returnError('Can Not Add, you are not owner or member in group', '401');
-
-            $success = GroupService::getMembersGroup($request);
-            
-            return $this->returnData('Get Data Successfully', 'data', $success);
-
-        } catch(Exception $e) {
-            return $this->returnError('Failed Get Data', '5000');
-        }
-    }
-
-    /**
      * Get all files in specific group
      *
      */
@@ -112,6 +91,24 @@ class GroupController extends Controller
             $success = GroupService::getFilesGroup($request);
             
             return $this->returnData('Get Data Successfully', 'data', $success);
+
+        } catch(Exception $e) {
+            return $this->returnError('Failed Get Data', '5000');
+        }
+    }
+
+    /**
+     * Get all users in specific group
+     *
+     */
+    public function getMembersGroup(GetGroupRequest $request)
+    {
+        try {
+            $user = auth()->user();
+
+            $success = GroupService::getMembersGroup($request);
+            
+            return $this->returnData('Get Members Successfully', 'data', $success);
 
         } catch(Exception $e) {
             return $this->returnError('Failed Get Data', '5000');

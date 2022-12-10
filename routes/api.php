@@ -35,8 +35,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/group/update',[GroupController::class,'update']); 
     Route::post('/group/delete',[GroupController::class,'destroy']); 
     
-    Route::get('/group/members',[GroupController::class,'getMembersGroup']); 
     Route::get('/group/files',[GroupController::class,'getFilesGroup']); 
+    Route::get('/group/members',[GroupController::class,'getMembersGroup']); 
 
     
     // File
